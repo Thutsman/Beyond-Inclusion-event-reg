@@ -185,9 +185,36 @@ export default function Hero() {
           {/* Event details cards */}
           <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginBottom: "2.5rem" }}>
             {[
-              { icon: "📅", label: "DATE", value: "Monday, 25 May 2026 — Africa Day" },
-              { icon: "📍", label: "VENUE", value: "10 on Pauling Hotel, Bulawayo" },
-              { icon: "🕙", label: "TIME", value: "10:00 am – 2:00 pm · Refreshments provided" },
+              {
+                icon: (
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <rect x="3" y="5" width="18" height="16" rx="2" />
+                    <path d="M16 3v4M8 3v4M3 10h18" />
+                  </svg>
+                ),
+                label: "DATE",
+                value: "Monday, 25 May 2026 — Africa Day",
+              },
+              {
+                icon: (
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11Z" />
+                    <circle cx="12" cy="10" r="2.5" />
+                  </svg>
+                ),
+                label: "VENUE",
+                value: "10 on Pauling Hotel, Bulawayo",
+              },
+              {
+                icon: (
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" />
+                  </svg>
+                ),
+                label: "TIME",
+                value: "10:00 am – 2:00 pm · Refreshments provided",
+              },
             ].map((item) => (
               <div
                 key={item.label}
@@ -201,7 +228,22 @@ export default function Hero() {
                   padding: "0.75rem 1rem",
                 }}
               >
-                <span style={{ fontSize: "1.1rem" }}>{item.icon}</span>
+                <span
+                  style={{
+                    width: "1.8rem",
+                    height: "1.8rem",
+                    borderRadius: "50%",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#c9a84c",
+                    background: "rgba(201,168,76,0.12)",
+                    border: "1px solid rgba(201,168,76,0.24)",
+                    flexShrink: 0,
+                  }}
+                >
+                  {item.icon}
+                </span>
                 <div>
                   <span
                     style={{
