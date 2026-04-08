@@ -135,13 +135,35 @@ body {
   to { transform: rotate(360deg); }
 }
 
-@media (max-width: 768px) {
+/* Navbar responsive visibility */
+.nav-desktop {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.nav-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .nav-desktop {
+    display: none !important;
+  }
+  .nav-mobile {
+    display: flex !important;
+  }
   .hero-grid {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
   }
   .author-grid {
     grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-grid {
     gap: 2rem !important;
   }
 }
