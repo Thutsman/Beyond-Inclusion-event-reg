@@ -216,15 +216,3 @@ body {
   }
 }
 
-/* Very narrow phones: stack cover and portrait for a larger, clearer book focal point */
-@media (max-width: 480px) {
-  .hero-book-grid {
-    grid-template-columns: 1fr !important;
-    max-width: 220px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero-book-grid > div:last-child {
-    margin-top: 0 !important;
-  }
-}

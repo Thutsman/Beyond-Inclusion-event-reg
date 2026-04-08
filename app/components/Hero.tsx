@@ -181,52 +181,24 @@ export default function Hero() {
           }}
         >
           <div
-            className="hero-book-grid"
             style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "1.5rem",
+              position: "relative",
               width: "100%",
+              maxWidth: "240px",
+              borderRadius: "4px",
+              overflow: "hidden",
+              boxShadow: "0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,168,76,0.25)",
+              animation: "float 6s ease-in-out infinite",
             }}
           >
-            {/* Book cover */}
-            <div
-              style={{
-                position: "relative",
-                borderRadius: "4px",
-                overflow: "hidden",
-                boxShadow: "0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,168,76,0.25)",
-                animation: "float 6s ease-in-out infinite",
-              }}
-            >
-              <Image
-                src="/book-cover.jpeg"
-                alt="Beyond Inclusion book cover"
-                width={220}
-                height={320}
-                priority
-                style={{ width: "100%", height: "auto", display: "block" }}
-              />
-            </div>
-
-            {/* Author photo */}
-            <div
-              style={{
-                position: "relative",
-                borderRadius: "4px",
-                overflow: "hidden",
-                boxShadow: "0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,168,76,0.25)",
-                marginTop: "1.5rem",
-              }}
-            >
-              <Image
-                src="/tadiwa-pic.jpeg"
-                alt="Dr. Tadiwanashe Muganyi"
-                width={220}
-                height={320}
-                style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
-              />
-            </div>
+            <Image
+              src="/book-cover.jpeg"
+              alt="Beyond Inclusion book cover"
+              width={220}
+              height={320}
+              priority
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
           </div>
 
           {/* Author name card below images */}
