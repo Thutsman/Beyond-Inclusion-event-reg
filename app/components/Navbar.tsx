@@ -123,8 +123,8 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile right side: Register pill + Hamburger */}
-          <div className="nav-mobile" style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+          {/* Mobile only: one REGISTER + menu (visibility controlled in globals.css; no inline display — it broke desktop) */}
+          <div className="nav-mobile nav-mobile-actions" style={{ alignItems: "center", gap: "0.75rem" }}>
             <a
               href="#register"
               style={{
@@ -179,7 +179,7 @@ export default function Navbar() {
 
       {/* Mobile dropdown menu */}
       <div
-        className="nav-mobile"
+        className="nav-mobile nav-mobile-drawer"
         style={{
           position: "fixed",
           top: menuOpen ? "64px" : "-100%",
@@ -191,7 +191,6 @@ export default function Navbar() {
           borderBottom: "1px solid rgba(201,168,76,0.2)",
           transition: "top 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
           padding: "1rem 1.5rem 1.5rem",
-          display: "flex",
           flexDirection: "column",
           gap: "0",
         }}
@@ -225,7 +224,7 @@ export default function Navbar() {
       {/* Backdrop to close menu */}
       {menuOpen && (
         <div
-          className="nav-mobile"
+          className="nav-mobile nav-mobile-backdrop"
           onClick={() => setMenuOpen(false)}
           style={{
             position: "fixed",

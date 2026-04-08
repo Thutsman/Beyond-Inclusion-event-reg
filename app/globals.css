@@ -135,14 +135,24 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* Navbar responsive visibility */
+/* Navbar: desktop vs mobile — use !important so inline styles never leak the mobile row onto desktop */
 .nav-desktop {
   display: flex;
   gap: 2rem;
   align-items: center;
+  flex-wrap: nowrap;
 }
 .nav-mobile {
   display: none;
+}
+
+@media (min-width: 768px) {
+  .nav-desktop {
+    display: flex !important;
+  }
+  .nav-mobile {
+    display: none !important;
+  }
 }
 
 @media (max-width: 767px) {
