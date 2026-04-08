@@ -101,8 +101,8 @@ export default function Hero() {
         }}
         className="hero-grid"
       >
-        {/* Left column — text */}
-        <div>
+        {/* Lead: stays above the fold on mobile; visuals sit next on small screens */}
+        <div className="hero-col-lead">
           {/* Event badge */}
           <div
             style={{
@@ -168,7 +168,108 @@ export default function Hero() {
               width: "200px",
             }}
           />
+        </div>
 
+        {/* Right column — images (desktop: right; mobile: directly under title block) */}
+        <div
+          className="hero-col-visual"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "1.5rem",
+          }}
+        >
+          <div
+            className="hero-book-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "1.5rem",
+              width: "100%",
+            }}
+          >
+            {/* Book cover */}
+            <div
+              style={{
+                position: "relative",
+                borderRadius: "4px",
+                overflow: "hidden",
+                boxShadow: "0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,168,76,0.25)",
+                animation: "float 6s ease-in-out infinite",
+              }}
+            >
+              <Image
+                src="/book-cover.jpeg"
+                alt="Beyond Inclusion book cover"
+                width={220}
+                height={320}
+                priority
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
+            </div>
+
+            {/* Author photo */}
+            <div
+              style={{
+                position: "relative",
+                borderRadius: "4px",
+                overflow: "hidden",
+                boxShadow: "0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,168,76,0.25)",
+                marginTop: "1.5rem",
+              }}
+            >
+              <Image
+                src="/tadiwa-pic.jpeg"
+                alt="Dr. Tadiwanashe Muganyi"
+                width={220}
+                height={320}
+                style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
+              />
+            </div>
+          </div>
+
+          {/* Author name card below images */}
+          <div
+            style={{
+              textAlign: "center",
+              background: "rgba(15,61,82,0.6)",
+              border: "1px solid rgba(201,168,76,0.2)",
+              borderRadius: "4px",
+              padding: "1rem 1.5rem",
+              width: "100%",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "Georgia, serif",
+                fontSize: "1.1rem",
+                fontWeight: 700,
+                color: "#f0ede6",
+                marginBottom: "0.25rem",
+              }}
+            >
+              Dr. Tadiwanashe Muganyi
+            </p>
+            <p
+              style={{
+                fontSize: "0.75rem",
+                color: "#a8bfc5",
+                fontFamily: "var(--font-geist-sans)",
+                lineHeight: 1.6,
+              }}
+            >
+              PhD Industrial Economics — Fintech
+              <br />
+              MSc Global Central Banking &amp; Financial Regulation
+              <br />
+              <span style={{ color: "#c9a84c" }}>Warwick Business School · Bank of England</span>
+            </p>
+          </div>
+        </div>
+
+        {/* Rest: quote, event cards, CTA — after visuals on mobile */}
+        <div className="hero-col-rest">
           <p
             style={{
               fontFamily: "Georgia, serif",
@@ -305,101 +406,6 @@ export default function Hero() {
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
-        </div>
-
-        {/* Right column — images */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: "1.5rem",
-          }}
-        >
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "1.5rem",
-              width: "100%",
-            }}
-          >
-            {/* Book cover */}
-            <div
-              style={{
-                position: "relative",
-                borderRadius: "4px",
-                overflow: "hidden",
-                boxShadow: "0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,168,76,0.25)",
-                animation: "float 6s ease-in-out infinite",
-              }}
-            >
-              <Image
-                src="/book-cover.jpeg"
-                alt="Beyond Inclusion book cover"
-                width={220}
-                height={320}
-                style={{ width: "100%", height: "auto", display: "block" }}
-              />
-            </div>
-
-            {/* Author photo */}
-            <div
-              style={{
-                position: "relative",
-                borderRadius: "4px",
-                overflow: "hidden",
-                boxShadow: "0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,168,76,0.25)",
-                marginTop: "1.5rem",
-              }}
-            >
-              <Image
-                src="/tadiwa-pic.jpeg"
-                alt="Dr. Tadiwanashe Muganyi"
-                width={220}
-                height={320}
-                style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
-              />
-            </div>
-          </div>
-
-          {/* Author name card below images */}
-          <div
-            style={{
-              textAlign: "center",
-              background: "rgba(15,61,82,0.6)",
-              border: "1px solid rgba(201,168,76,0.2)",
-              borderRadius: "4px",
-              padding: "1rem 1.5rem",
-              width: "100%",
-            }}
-          >
-            <p
-              style={{
-                fontFamily: "Georgia, serif",
-                fontSize: "1.1rem",
-                fontWeight: 700,
-                color: "#f0ede6",
-                marginBottom: "0.25rem",
-              }}
-            >
-              Dr. Tadiwanashe Muganyi
-            </p>
-            <p
-              style={{
-                fontSize: "0.75rem",
-                color: "#a8bfc5",
-                fontFamily: "var(--font-geist-sans)",
-                lineHeight: 1.6,
-              }}
-            >
-              PhD Industrial Economics — Fintech
-              <br />
-              MSc Global Central Banking &amp; Financial Regulation
-              <br />
-              <span style={{ color: "#c9a84c" }}>Warwick Business School · Bank of England</span>
-            </p>
-          </div>
         </div>
       </div>
 

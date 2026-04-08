@@ -162,13 +162,42 @@ body {
   .nav-mobile {
     display: flex !important;
   }
+  /* Hero: stack as lead → book/author → details/CTA so the cover reads as part of the hero */
   .hero-grid {
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: unset !important;
     gap: 2rem !important;
+  }
+  .hero-col-lead {
+    order: 1;
+  }
+  .hero-col-visual {
+    order: 2;
+  }
+  .hero-col-rest {
+    order: 3;
   }
   .author-grid {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
+  }
+}
+
+/* Hero desktop: left column = headline block + details; right column spans both rows */
+@media (min-width: 768px) {
+  .hero-col-lead {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .hero-col-rest {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .hero-col-visual {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
   }
 }
 
@@ -184,5 +213,18 @@ body {
   }
   .footer-grid {
     grid-template-columns: 1fr !important;
+  }
+}
+
+/* Very narrow phones: stack cover and portrait for a larger, clearer book focal point */
+@media (max-width: 480px) {
+  .hero-book-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-book-grid > div:last-child {
+    margin-top: 0 !important;
   }
 }
